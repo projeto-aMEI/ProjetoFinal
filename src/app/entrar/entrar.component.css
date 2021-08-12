@@ -1,6 +1,6 @@
 
 #back {
-  
+
   min-height: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -39,4 +39,17 @@ left: 467px;
 top: 518px;
 border-radius: 10px;
 
+}
+
+
+.fs-25 {
+  font-size: 18px;
+  color:rgb(75, 23, 124);
+  border-color: rgb(75, 23, 124);
+  border-radius: 10px;
+
+}
+
+.fs-25:hover{
+  background-color: rgb(75, 23, 124);
 }
