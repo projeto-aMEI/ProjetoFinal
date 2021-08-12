@@ -1,0 +1,42 @@
+
+#back {
+  
+  min-height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("../../assets/mei-microempreendedor-individual-780x405-638x331.png");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#dados{
+  background-color: rgb(75, 23, 124);
+  color: aliceblue;
+}
+
+
+#modalentrar{
+  height: 460px;
+width: 519px;
+left: 460px;
+top: 244px;
+border-radius: 0px;
+
+}
+#botaocadastro{
+  height: 80px;
+width: 346px;
+left: 467px;
+top: 518px;
+border-radius: 10px;
+
+}

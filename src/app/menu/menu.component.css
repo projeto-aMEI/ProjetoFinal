@@ -1,0 +1,52 @@
+ul li a, ul li{
+
+  text-decoration: none;
+  color:#fff;
+  list-style-type: none;
+  display: inline-block;
+  padding: 5px 13px;
+  position: relative;
+  transition: 0.5s;
+  font: 26px;
+  color:black
+}
+ul li a:before{
+  content: "";
+position: absolute;
+width: 100%;
+height: 3px;
+bottom: 0;
+left: 0;
+color:#022566;
+background-color:#022566;
+visibility: hidden;
+-webkit-transform: scaleX(0);
+transform: scaleX(0);
+-webkit-transition: all 0.3s ease-in-out 0s;
+transition: all 0.3s ease-in-out 0s;
+}
+
+ul li a:hover:before  {
+  color:#022566;
+  text-decoration: underline;
+  transition: 0.5s;
+  visibility: visible;
+-webkit-transform: scaleX(1);
+transform: scaleX(1);
+}
+ul li a:hover {
+  color:#022566;
+}
+
+.btn-blue {
+  background-color:#023799;
+  transition: 0.6s;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px !important;
+}
+
+.btn-blue:hover {
+  background-color:#022566;
+  transition: 0.3s;
+}
