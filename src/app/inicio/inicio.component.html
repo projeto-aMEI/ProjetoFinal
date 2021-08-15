@@ -3,27 +3,27 @@
 <app-menu-feed></app-menu-feed>
 
 <div class="container-fluid bg-cz pl-5 pr-5">
-  
+
   <div class="row bg-cz">
-      
+
       <!-- Div do card do Perfil -->
-      <div class="col-md-2 m-0">  
+      <div class="col-md-2 m-0">
           <div class="card mt-5 sticky-top justify-content-center align-items-center" style="width: 100%;">
-            
+
             <img class="card-img-top mt-3" src="{{foto}}" class="rounded mt-4"
                   alt="Imagem de perfil do usuário" style="width: 70% ">
-              
+
                   <div class="card-body">
                     <h5 class="card-title">{{nome}}</h5>
                     <p class="card-text">{{descricaoPerfil}}</p>
                   </div>
 
                   <ul class="list-group list-group-flush" style="width: 100%;">
-                  
+
                     <li class="list-group-item">
                       <a routerLink='/meuPerfil'><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
                     </li>
-                  
+
                     <li class="list-group-item">
                       <a [routerLink]="['/user-edit', id]"><i class="fa fa-cog" aria-hidden="true"></i> Editar perfil</a>
                     </li>
@@ -31,9 +31,9 @@
                 </ul>
           </div>
       </div>
-      
+
       <div class="col-md-8 d-flex justify-content-center flex-wrap">
-          
+
           <!-- div para publicar e pesquisar -->
           <div class="col-lg-10 profile-col-main">
               <div class="panel ">
@@ -46,26 +46,32 @@
                         class="form-control bg-white" id="titulo"
                         placeholder="Digite um título de postagem para pesquisar" (keyup)='findByTituloPostagem()'>
                       </div>
-                      
+
                   </div>
               </div>
           </div>
 
           <!-- div rolagem infinita -->
           <div *ngFor='let item of listaPostagens | orderBy : key : reverse' class="card d-flex p-4 mt-3 rounded bg-light" style="width: 700px" >
-              
+
               <div class="card-body">
                 <h5 class="card-title"><img src="{{item.usuario.foto}}" width="45px" height="45px" class="circle"> {{item.usuario.nome}}</h5>
-                
+
                 <p class="card-text"><small class="text-muted">{{item.tema.nome}}</small></p>
 
                 <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
-               
+
                 <h5 class="card-text">{{item.titulo}}</h5>
                 <p class="card-title">{{item.descricaoPost}}</p>
                 <p class="card-text"><small class="text-muted">{{item.hashtag}}</small></p>
-                
+
                 <img class="card-img-top" src="{{item.imgpost}}"   alt="Imagem de capa do card">
+                <p class="card-text mt-3">
+                  <button (click)='getPostagemById(item.id)' (click)='curtida(item.id)' class="btn"><i class="fa fa-heart text-roxo" aria-hidden="true"></i></button>
+                  <b>Amei's:</b> {{item.curtidas}}
+                  <!--<button (click)='getPostagemById(item.id)' (click)='descurtida(item.id)' class="btn"><i class="fa fa-heart text-roxo"  aria-hidden="true"></i></button>-->
+
+                </p>
               </div>
 
           </div>
@@ -75,21 +81,21 @@
           <div class="list-group">
             <table class="list-group-item list-group-item-action active bg-laranja">
               Temas mais populares
-            </table>  
-            
+            </table>
+
             <table *ngFor='let item of listaTemas' class="list-group-item list-group-item-action">
               {{item.nome}}
             </table>
           </div>
       </div>
-      
+
   </div>
 </div>
 
 <!-- Modal para criar uma postagem-->
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    
+
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="TituloModalCentralizado">Fazer Postagem</h5>
@@ -103,7 +109,7 @@
           <label for="titulo">Título</label>
           <input type="text" [(ngModel)]='postagem.titulo' class="form-control" id="titulo" placeholder="Digite o título">
         </div>
-       
+
         <div class="form-group">
          <label for="titulo">Texto</label>
          <textarea [(ngModel)]='postagem.descricaoPost' class="form-control"  name="texto" id="" rows="3"></textarea>

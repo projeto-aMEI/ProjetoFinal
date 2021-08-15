@@ -189,3 +189,11 @@ a.text-muted:focus {
 .bg-cz {
   background-color:#eee;
 }
+
+.text-roxo {
+  color:#63018a
+}
+
+.text-roxo:hover {
+  color:#43035c
+}

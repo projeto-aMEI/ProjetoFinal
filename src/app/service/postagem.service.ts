@@ -39,4 +39,13 @@ export class PostagemService {
   deletePostagem(id: number){
     return this.http.delete(`https://amei3.herokuapp.com/postagens/deletar/${id}`)
   }
+
+  //curtidas
+  putCurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(`https://amei3.herokuapp.com/postagens/likes/${id}`, this.token)
+  }
+
+  putDescurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(`https://amei3.herokuapp.com/postagens/dislikes/${id}`, this.token)
+  }
 }
