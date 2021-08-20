@@ -30,5 +30,5 @@ Go to <a href="https://amei.netlify.app/">our website</a> to check our results. 
 <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60"/> </a> </p>
   
 <hr>
-<h6><i>Developed by || Desenvolvidor por: <a href="https://github.com/gumunizs">Gustavo Muniz</a>, <a href="https://github.com/joaovitormo">João Vitor</a>,
+<h6><i>Developed by || Desenvolvido por: <a href="https://github.com/gumunizs">Gustavo Muniz</a>, <a href="https://github.com/joaovitormo">João Vitor</a>,
 <a href="https://github.com/marianac-campos">Mariana Campos</a>, <a href="https://github.com/t4lu">Talu</a>, <a href="https://github.com/xnildo">Zé Nildo</a>.</h6>
