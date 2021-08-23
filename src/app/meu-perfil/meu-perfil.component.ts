@@ -33,8 +33,15 @@ export class MeuPerfilComponent implements OnInit {
 
   //Dados usuario do card
   nome = environment.nome
+  sobrenome = environment.sobrenome
+  email = environment.email
   foto = environment.foto
   descricaoPerfil = environment.descricaoPerfil
+  dataNascimento = environment.dataNascimento
+  razaoSocial = environment.razaoSocial
+  numero = environment.numero
+  github = environment.github
+  linkedin = environment.linkedin
 
   //ordena as postagens
   key = 'data'
@@ -48,54 +55,70 @@ export class MeuPerfilComponent implements OnInit {
     private alertas: AlertasService,
   ) { }
 
-  ngOnInit(){
-    window.scroll(0,0)
-    if(environment.token == '') {
-      this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente!')
+  ngOnInit() {
+    window.scroll(0, 0)
+    if (environment.token == '') {
+      this.alertas.showAlertDanger('Sua sessão expirou, faça o login novamente!')
       this.router.navigate(['/entrar'])
-  }
-  this.getAllTemas()
-  this.getAllPostagens()
-  this.findByIdUser()
+    }
+    this.getAllTemas()
+    this.getAllPostagens()
+    this.findByIdUser()
   }
 
-  getAllTemas(){
-    this.temaService.getAllTemas().subscribe((resp: Tema[])=> {
+  getAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=> {
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
   //Exibir publis
-  getAllPostagens(){
+  getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
     })
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
 
   //Postagem publi
-  publicar(){
+  publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
     this.user.id = this.idUser
     this.postagem.usuario = this.user
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=> {
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
+  }
+
+  btnWhatsapp(id: string, titulo2: string) {
+    let usuario = id
+    let titulo = titulo2
+    window.open('https://wa.me/' + usuario + '?text=' + 'Olá, ' + titulo + '! Vi você no aMEI, e queria iniciar uma conversa :D', "_blank")
+  }
+
+  btnLinkedin(id: string) {
+    let usuario = id
+    window.open(usuario)
+  }
+
+  btnGithub(id: string) {
+    let usuario = id
+    window.open(usuario)
   }
 
   //Pesquisa de publicações, ainda não implementado

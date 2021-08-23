@@ -10,7 +10,6 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RegistrarComponent } from './registrar/registrar.component';
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
@@ -24,6 +23,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { DicasComponent } from './dicas/dicas.component';
 import { MenuFeedComponent } from './menu-feed/menu-feed.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { MenuFeedComponent } from './menu-feed/menu-feed.component';
     MenuComponent,
     EntrarComponent,
     RegistrarComponent,
-    SobreNosComponent,
     ContatoComponent,
     InicioComponent,
     TemaComponent,
@@ -44,7 +43,8 @@ import { MenuFeedComponent } from './menu-feed/menu-feed.component';
     UserEditComponent,
     AlertasComponent,
     MenuFeedComponent,
-    DicasComponent
+    DicasComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

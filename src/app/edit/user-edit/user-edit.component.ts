@@ -17,6 +17,17 @@ export class UserEditComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
 
+  id = environment.id
+
+  nome = environment.nome
+  sobrenome = environment.sobrenome
+  email = environment.email
+  foto = environment.foto
+  numero = environment.numero
+  descricaoPerfil = environment.descricaoPerfil
+  dataNascimento = environment.dataNascimento
+  razaoSocial = environment.razaoSocial
+
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
@@ -25,7 +36,7 @@ export class UserEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
@@ -43,13 +54,11 @@ export class UserEditComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
-  atualizar(){
-    this.user.tipo = this.tipoUsuario
-
+  atualizar() {
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('As senhas estão divergentes, tente novamente!')
     } else {
-      this.authService.putUsuario(this.user).subscribe((resp: User)=> {
+      this.authService.putUsuario(this.user).subscribe((resp: User) => {
         this.alertas.showAlertSuccess('Usuário alterado com sucesso!')
         this.user = resp
         this.router.navigate(['/entrar'])
@@ -58,7 +67,7 @@ export class UserEditComponent implements OnInit {
   }
 
   findByIdUser(id: number) {
-    this.authService.getByIdUser(id).subscribe((resp: User)=>{
+    this.authService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
     })
   }

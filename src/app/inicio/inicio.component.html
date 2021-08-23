@@ -1,97 +1,190 @@
-<app-menu-feed></app-menu-feed>
+<nav class="navbar navbar-expand-lg navbar-light shadow p-3 bg-purple">
 
-<div class="container-fluid bg-cz pl-5 pr-5">
+  <a class="navbar-brand" routerLink='/inicio'><img src="https://i.imgur.com/Pc8FukC.png" height="65px"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+    aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav justify-content-center ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white" style="font-size: 30px;" routerLink='/inicio'><i class="fa fa-home"
+            aria-hidden="true"></i> <span class="sr-only">(página
+            atual)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" style="font-size: 30px;" routerLink='/dicas'><i class="fa fa-lightbulb-o"
+            aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" style="font-size: 30px;" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-search"
+            aria-hidden="true"></i></a>
+      </li>
+    </ul>
+    <div class="collapse" id="collapseSearch">
+      <div class="form-group mt-3 ml-auto">
+        <input class="input-search form-control" [(ngModel)]="tituloPost" type="text" id="titulo"
+          placeholder="Pesquisar por... " (keyup)='findByTituloPostagem()'>
+      </div>
+    </div>
+    <div class="form-group mt-3 ml-auto">
+      <input type="hidden">
+    </div>
+
+    <form class="form-inline my-2 my-lg-0 ml-3">
+      <button class="btn my-2 my-sm-0 text-white" type="submit" routerLink='/entrar'><i class="fa fa-sign-out"
+          aria-hidden="true"></i> Sair</button>
+    </form>
+  </div>
+
+</nav>
+
+<div class="container-fluid bg-cz pl-5 pr-5 d-flex justify-content-center pb-5">
 
   <div class="row bg-cz">
 
-      <!-- Div do card do Perfil -->
-      <div class="col-md-2 m-0">
-          <div class="card mt-5 sticky-top justify-content-center align-items-center" style="width: 100%;">
+    <!-- Div do card do Perfil -->
+    <div class="col-md-3 m-0 flex-wrap d-flex justify-content-end" style="height: 1000px;">
+      <div class="card-user mt-5 border-md" style="width: 70%;">
+        <div class="fundo d-flex justify-content-center">
+          <img *ngIf="foto != null" class="img-card rounded-circle mt-4" src="{{foto}}" alt="Imagem de perfil do usuário">
+          <img *ngIf="foto == null" class="img-card rounded-circle mt-4" src="https://www.camargoecamposrh.com.br/wp-content/uploads/2017/05/default-user.png" alt="Imagem de perfil do usuário">
+        </div>
 
-            <img class="card-img-top mt-3" src="{{foto}}" class="rounded mt-4"
-                  alt="Imagem de perfil do usuário" style="width: 70% ">
 
-                  <div class="card-body">
-                    <h5 class="card-title">{{nome}}</h5>
-                    <p class="card-text">{{descricaoPerfil}}</p>
-                  </div>
 
-                  <ul class="list-group list-group-flush" style="width: 100%;">
 
-                    <li class="list-group-item">
-                      <a routerLink='/meuPerfil'><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
-                    </li>
+        <div class="text-center p-2">
+          <h5 class="card-title">{{nome}}</h5>
+          <p class="card-text"><small class="text-muted">{{razaoSocial}}</small></p>
+          <p class="card-text">{{descricaoPerfil}}</p>
+        </div>
 
-                    <li class="list-group-item">
-                      <a [routerLink]="['/user-edit', id]"><i class="fa fa-cog" aria-hidden="true"></i> Editar perfil</a>
-                    </li>
+        <ul class="list-group list-group-flush" style="width: 100%;">
 
-                </ul>
-          </div>
+          <li class="list-group-item">
+            <a routerLink='/meuPerfil'><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+          </li>
+
+          <li class="list-group-item">
+            <a [routerLink]="['/user-edit', id]"><i class="fa fa-cog" aria-hidden="true"></i> Editar perfil</a>
+          </li>
+
+        </ul>
+        <div class="card  sticky-top justify-content-center border-md align-items-center border-none mt-5 pb-3" style="width: 100%;">
+          <hr>
+          <h5 class="card-title">Outros usuários</h5>
+          <ul *ngFor='let item of listaUsuarios' class="list-group-item p-0 m-0 mt-2 border-none" style="width: 100%;">
+            <li class="p-0 ml-3">
+              <h6><img *ngIf="item.foto != null" src="{{item.foto}}" id="img-user" width="35px" height="35px" class="circle"><img *ngIf="item.foto == null" src="https://www.camargoecamposrh.com.br/wp-content/uploads/2017/05/default-user.png" id="img-user" width="35px" height="35px" class="circle"><a
+                  [routerLink]="['/usuario', item.id]"> {{item.nome}} {{item.sobrenome}}</a></h6>
+            </li>
+            <hr class="p-0 m-0">
+          </ul>
+        </div>
       </div>
 
-      <div class="col-md-8 d-flex justify-content-center flex-wrap">
+    </div>
 
-          <!-- div para publicar e pesquisar -->
-          <div class="col-lg-10 profile-col-main">
-              <div class="panel ">
-                  <div class="panel-body">
+    <div class="col-md-6 d-flex justify-content-center flex-wrap ">
 
-                      <textarea class="form-control mt-3 bd-redonda" rows="3" placeholder="Qual a ideia de hoje?" data-toggle="modal" data-target="#novaPostagem"></textarea>
+      <!-- div para publicar e pesquisar -->
+      <div class="col-md-12 mt-5 bg-br border-md">
+        <div class="panel">
+          <div class="panel-body">
+            <h6 class="card-title"> <img *ngIf="foto != null" class="img-card rounded-circle mt-4" src="{{foto}}" alt="Imagem de perfil do usuário" width="45px" height="45px" class="circle">
+              <img *ngIf="foto == null" class="img-card rounded-circle mt-4" src="https://www.camargoecamposrh.com.br/wp-content/uploads/2017/05/default-user.png" alt="Imagem de perfil do usuário" width="45px" height="45px" class="circle"> {{nome}}</h6>
+            <textarea class="form-control mt-3 bd-redonda bg-cz border-none" rows="1"
+              placeholder="Qual a ideia de hoje?" data-toggle="modal" data-target="#novaPostagem"></textarea>
+          </div>
 
-                      <div class="form-group mt-5">
-                        <input [(ngModel)]="tituloPost" type="text"
-                        class="form-control bg-white" id="titulo"
-                        placeholder="Digite um título de postagem para pesquisar" (keyup)='findByTituloPostagem()'>
-                      </div>
+          </div>
+        </div>
 
-                  </div>
+      <!-- div rolagem infinita -->
+      <div *ngFor='let item of listaPostagens | orderBy : key : reverse' class="card d-flex border-md bg-light mt-5" style="width: 100%" >
+        <div class="card-body p-4 mt-3 ">
+          <div class="row">
+          <div class="ml-2 p-0">
+            <h5 class="card-title"><img *ngIf="item.usuario.foto != null" class="img-card rounded-circle mt-4" src="{{item.usuario.foto}}" alt="Imagem de perfil do usuário" width="45px" height="45px" class="circle">
+              <img *ngIf="item.usuario.foto == null" class="img-card rounded-circle mt-4" src="https://www.camargoecamposrh.com.br/wp-content/uploads/2017/05/default-user.png" alt="Imagem de perfil do usuário" width="45px" height="45px" class="circle"></h5>
+          </div>
+          <div class="col-md-6">
+            <strong class="fs-18"><a style="text-decoration: none;" *ngIf="item.usuario.id != id"  [routerLink]="['/usuario', item.usuario.id]"> {{item.usuario.nome}}</a><a routerLink='/meuPerfil' class="card-title text-dark" style="text-decoration: none;" *ngIf="item.usuario.id == id"> {{item.usuario.nome}}</a></strong> | <small>{{item.usuario.razaoSocial}}</small>
+            <p class="card-text"> <small class="text-muted"> {{item.date | date: 'dd/MM/yyyy'}} | {{item.date | date: 'HH:mm'}} </small></p>
+          </div>
+          </div>
+          <h5 class="card-text mt-2">{{item.titulo}}</h5>
+          <small class="text-muted"> {{item.tema.nome}}</small>
+          <p class="card-title">{{item.descricaoPost}}</p>
+          <p class="card-text"><small class="text-muted">{{item.hashtag}}</small></p>
+
+          <img *ngIf="item.imgpost != null" class="card-img-top" src="{{item.imgpost}}"   alt="Imagem de capa do card">
+          <p class="card-text mt-3 ">
+            <a (click)='getPostagemById(item.id)' (click)='curtida(item.id)' class="btn border-cz no-wrap"><div class="icon-heart no-wrap"></div>
+            {{item.curtidas}} </a> <a class="ml-2 text-decoration-none text-dark border-cz p-2" data-target='{{item.id}}' data-toggle="collapse" href="#collapseComent{{item.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fa fa-comment" aria-hidden="true"></i> Entre em contato comigo
+            </a>
+          </p>
+          <p>
+
+          </p>
+
+        </div>
+
+
+
+            <div class="collapse bg-br" id='collapseComent{{item.id}}'>
+              <div class="row m-0 p-0 text-center">
+              <div class="card card-body">
+                <ul class="list-inline col-md-12">
+              <li class="list-inline col-md-4 border">
+                <h6 class="mb-0"><i class="fa fa-github" aria-hidden="true"></i> Github</h6>
+                <span class="text-secondary"><a (click)="btnGithub(item.usuario.github)" style="cursor: pointer;" >@{{item.usuario.nome}}</a></span>
+              </li>
+              <li class="list-inline col-md-4 border">
+                <h6 class="mb-0" ><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</h6>
+                <span class="text-secondary"><a (click)="btnLinkedin(item.usuario.linkedin)" style="cursor: pointer;" >@{{item.usuario.nome}}</a></span>
+              </li>
+              <li class="list-inline col-md-4 border">
+                <h6 class="mb-0" ><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</h6>
+                <span class="text-secondary"><a (click)="btnWhatsapp(item.usuario.numero, item.usuario.nome)" style="cursor: pointer;" >Me chame :)</a></span>
+              </li>
+            </ul>
               </div>
-          </div>
+            </div>
 
-          <!-- div rolagem infinita -->
-          <div *ngFor='let item of listaPostagens | orderBy : key : reverse' class="card d-flex p-4 mt-3 rounded bg-light" style="width: 700px" >
-
-              <div class="card-body">
-                <h5 class="card-title"><img src="{{item.usuario.foto}}" width="45px" height="45px" class="circle"> {{item.usuario.nome}}</h5>
-
-                <p class="card-text"><small class="text-muted">{{item.tema.nome}}</small></p>
-
-                <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
-
-                <h5 class="card-text">{{item.titulo}}</h5>
-                <p class="card-title">{{item.descricaoPost}}</p>
-                <p class="card-text"><small class="text-muted">{{item.hashtag}}</small></p>
-
-                <img class="card-img-top" src="{{item.imgpost}}"   alt="Imagem de capa do card">
-                <p class="card-text mt-3">
-                  <button (click)='getPostagemById(item.id)' (click)='curtida(item.id)' class="btn"><i class="fa fa-heart text-roxo" aria-hidden="true"></i></button>
-                  <b>Amei's:</b> {{item.curtidas}}
-                  <!--<button (click)='getPostagemById(item.id)' (click)='descurtida(item.id)' class="btn"><i class="fa fa-heart text-roxo"  aria-hidden="true"></i></button>-->
-
-                </p>
-              </div>
 
           </div>
+
+
+    </div>
+
+
+    </div>
+
+
+    <div class="col-md-3 mt-5 bg-cz d-flex justify-content-start">
+      <div class="list-group sticky-top" style="width: 70%;">
+        <table class="list-group-item list-group-item-action active bg-laranja">
+          Temas mais populares
+        </table>
+
+        <table *ngFor='let item of listaTemas' class="list-group-item list-group-item-action">
+          {{item.nome}}
+        </table>
       </div>
-
-      <div class="col-md-2 mt-5 bg-cz">
-          <div class="list-group">
-            <table class="list-group-item list-group-item-action active bg-laranja">
-              Temas mais populares
-            </table>
-
-            <table *ngFor='let item of listaTemas' class="list-group-item list-group-item-action">
-              {{item.nome}}
-            </table>
-          </div>
-      </div>
+    </div>
 
   </div>
 </div>
 
 <!-- Modal para criar uma postagem-->
-<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
 
     <div class="modal-content">
@@ -105,47 +198,49 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input type="text" [(ngModel)]='postagem.titulo' class="form-control" id="titulo" placeholder="Digite o título">
+          <input type="text" [(ngModel)]='postagem.titulo' class="form-control" id="titulo"
+            placeholder="Digite o título">
         </div>
 
         <div class="form-group">
-         <label for="titulo">Texto</label>
-         <textarea [(ngModel)]='postagem.descricaoPost' class="form-control"  name="texto" id="" rows="3"></textarea>
-       </div>
+          <label for="titulo">Texto</label>
+          <textarea [(ngModel)]='postagem.descricaoPost' class="form-control" name="texto" id="" rows="3"></textarea>
+        </div>
 
-       <div class="form-group">
-        <label for="img">Imagem</label>
-        <input type="text" [(ngModel)]='postagem.imgpost' class="form-control" id="img" placeholder="Insira o link da sua imagem">
-      </div>
+        <div class="form-group">
+          <label for="img">Imagem</label>
+          <input type="text" [(ngModel)]='postagem.imgpost' class="form-control" id="img"
+            placeholder="Insira o link da sua imagem">
+        </div>
 
-      <div class="form-group">
-        <label for="img">Hashtag</label>
-        <input type="text" [(ngModel)]='postagem.hashtag' class="form-control" id="hashtag" placeholder="Insira hashtags sobre o seu post">
-      </div>
+        <div class="form-group">
+          <label for="img">Hashtag</label>
+          <input type="text" [(ngModel)]='postagem.hashtag' class="form-control" id="hashtag"
+            placeholder="Insira hashtags sobre o seu post">
+        </div>
 
-       <div class="form-group">
-         <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:</label>
-         <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-          <option *ngFor='let tema of listaTemas' value="{{tema.id}}">{{tema.nome}}</option>
-         </select>
-       </div>
+        <div class="form-group">
+          <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:</label>
+          <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option *ngFor='let tema of listaTemas' value="{{tema.id}}">{{tema.nome}}</option>
+          </select>
+        </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()' >Publicar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>
       </div>
 
     </div>
   </div>
 </div>
 
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-  crossorigin="anonymous"></script>
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-  crossorigin="anonymous"></script>
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

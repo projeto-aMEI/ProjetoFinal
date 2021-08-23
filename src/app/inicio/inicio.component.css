@@ -19,8 +19,8 @@ ul li a:before {
   height: 3px;
   bottom: 0;
   left: 0;
-  color: #E09E27;
-  background-color: #E09E27;
+  color: #ff992e;
+  background-color: #ff992e;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -29,7 +29,7 @@ ul li a:before {
 }
 
 ul li a:hover:before {
-  color: #E09E27;
+  color: #ff992e;
   text-decoration: underline;
   transition: 0.5s;
   visibility: visible;
@@ -38,7 +38,7 @@ ul li a:hover:before {
 }
 
 ul li a:hover {
-  color: #E09E27;
+  color: #ff992e;
 }
 
 .btn-exit {
@@ -197,3 +197,83 @@ a.text-muted:focus {
 .text-roxo:hover {
   color:#43035c
 }
+
+.bg-purple {
+  background-color: #280370;
+}
+
+.bg-br {
+  background-color:#fff;
+}
+
+.border-none {
+  border:none;
+}
+
+.border-md {
+  border-radius:30px !important;
+}
+
+.border-md-top {
+  border-top-left-radius:30px !important;
+  border-top-right-radius:30px !important;
+}
+
+.fs-18 {
+  font-size: 20px;
+}
+
+
+
+.img-card {
+  max-height:65%;
+  max-width:65%;
+  border: 2px solid #eee;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.card-user {
+  background: linear-gradient(to bottom,
+  #280370 120px, white 120px);
+}
+
+.input-search {
+  background-color:#280370;
+  color:#fff;
+  outline: none;
+  border:2px solid #fff
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.input-search::placeholder{
+  color:#fff;
+}
+
+.border-cz {
+  background-color: #eee;
+  border-radius:30px !important;
+
+}
+
+.icon-heart:hover
+ {
+  background-image: url(../../assets/img/heart-solid.svg);
+  color: #43035c;
+  height: 22px;
+  width: 22px
+
+ }
+
+.icon-heart
+ {
+  background-image: url(../../assets/img/heart-regular.svg);
+  color: #43035c;
+  height: 22px;
+  width: 22px
+
+ }

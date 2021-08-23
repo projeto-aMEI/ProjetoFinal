@@ -48,4 +48,39 @@ export class PostagemService {
   putDescurtir(id: number): Observable<Postagem> {
     return this.http.put<Postagem>(`https://amei3.herokuapp.com/postagens/dislikes/${id}`, this.token)
   }
+
+  /*
+  getAllPostagens(): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>('http://localhost:8080/postagens')
+  }
+
+  getByIdPostagem(id: number): Observable<Postagem>{
+    return this.http.get<Postagem>(`http://localhost:8080/postagens/${id}`)
+  }
+
+  //pesquisa postagens
+  getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`http://localhost:8080/postagens/titulo/${titulo}`)
+  }
+
+  postPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.post<Postagem>('http://localhost:8080/postagens/postar', postagem)
+  }
+
+  putPostagem(postagem: Postagem) : Observable<Postagem>{
+    return this.http.put<Postagem>('http://localhost:8080/postagens/editar', postagem)
+  }
+
+  deletePostagem(id: number){
+    return this.http.delete(`http://localhost:8080/postagens/deletar/${id}`)
+  }
+
+  //curtidas
+  putCurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(`http://localhost:8080/postagens/likes/${id}`, this.token)
+  }
+
+  putDescurtir(id: number): Observable<Postagem> {
+    return this.http.put<Postagem>(`http://localhost:8080/postagens/dislikes/${id}`, this.token)
+  }*/
 }

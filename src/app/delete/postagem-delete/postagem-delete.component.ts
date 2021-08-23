@@ -31,6 +31,7 @@ export class PostagemDeleteComponent implements OnInit {
 
     this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
+    console.log('isso funciona')
   }
 
   findByIdPostagem(id: number){

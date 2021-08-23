@@ -17,14 +17,18 @@ export class RegistrarComponent implements OnInit {
 
   tipoUsuario: string;
 
+  step: any = 1;
+
+  progress = document.getElementById("#progress");
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private alertas: AlertasService,
   ) { }
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0)
 
   }
 
@@ -33,24 +37,24 @@ export class RegistrarComponent implements OnInit {
 
   }
 
-  // tipoUser(event: any){
-
-  //   this.tipoUsuario= event.target.value
-
-  // }
-
-  cadastrar(){
-    // this.user.tipo= this.tipoUsuario
-
-    if(this.user.senha != this.confirmarSenha){
+  cadastrar() {
+    if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger("As Senhas estão incorretas")
     }
-    else{
-      this.authService.cadastrar(this.user).subscribe((resp: User)=>{
-        this.user= resp
+    else {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
         this.router.navigate(['/entrar'])
         this.alertas.showAlertSuccess("Usuário Cadastrado com Sucesso")
       })
     }
+  }
+
+  next() {
+    this.step = this.step + 1;
+  }
+
+  back() {
+    this.step = this.step - 1;
   }
 }

@@ -18,8 +18,8 @@ ul li a:before{
   height: 3px;
   bottom: 0;
   left: 0;
-  color:#E09E27;
-  background-color:#E09E27;
+  color:#ff992e;
+  background-color:#ff992e;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -28,7 +28,7 @@ ul li a:before{
 }
 
 ul li a:hover:before  {
-  color:#E09E27;
+  color:#ff992e;
   text-decoration: underline;
   transition: 0.5s;
   visibility: visible;
@@ -37,17 +37,19 @@ ul li a:hover:before  {
 }
 
 ul li a:hover {
-  color:#E09E27;
+  color:#ff992e;
 }
 
 .btn-blue {
-  background-color:#270183;
+  background-color:#280370;
   transition: 0.2s;
   color: #fff;
   padding: 10px 20px;
   border-radius: 50px !important;
+  font-size: 20px;
 }
 
 .btn-blue:hover {
-  background-color:#6f52b7;
+  background-color:#ff992e;
+  color: #280370;
 }

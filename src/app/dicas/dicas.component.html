@@ -1,119 +1,164 @@
-<head>
-<title>aMEI</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-
-<body>
-    
+<link rel="stylesheet" href="dicas.component.css">
 <app-menu-feed></app-menu-feed>
 
   <!-- inicia Texto e imagem -->
   <div class="container">
-  <div class="row mt-5 mb-5 align-items-center">
-    <div class="col-md-7">
-        <h1 class="w3-text-teal">Central de Dicas</h1>
-        <h4>Encontre artigos, dicas, tutorias e vídeos para impulsionar o seu negócio ou serviço!</h4>
+    <div class="row mt-5 mb-5">
+      <div class="col-md-7">
+        <h1 class="titulo">Central de Dicas</h1>
+          <h4>Encontre artigos, dicas, respostas e tutoriais para impulsionar o seu empreendedorismo!</h4>
       </div>
       <div class="w3-third w3-container">
-        <figure>
-            <img src="assets/Business Plan-amico.png" width="550" height="550">
-        </figure>
+        <img src="assets/Business Plan-amico.png" width="470" height="470">
       </div>
     </div>
-</div>
+  </div>
   <!-- fecha Texto e imagem -->
 
-<!-- inicia Cards 1 -->
-<div class="row mt-5 d-flex justify-content-center">
-  <div class="container">
-    <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="assets/Artist-cuate.png">
-        <div class="card-body"><h5>Artigos</h5>
-          <p class="card-text"> 
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestiae soluta consequuntur rem perferendis
-            perspiciatis explicabo numquam maiores asperiores, fugiat atque nihil, itaque natus repellat animi
-            exercitationem enim. Voluptatem, harum?
-          </p>
-          <button type="button" class="btn btn-outline-success">
-            <a href="" target="_blank">Leia Mais</a>
-        </button>
-        </div>
-      </div> <!-- fecha primeiro card -->
+<!-- inicia primeira fileira -->
 
-      <div class="card">
-        <img class="card-img-top" src="assets/City driver-pana.png">
-        <div class="card-body"><h5>Dicas</h5>
-          <p class="card-text"> 
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestiae soluta consequuntur rem perferendis
-            perspiciatis explicabo numquam maiores asperiores, fugiat atque nihil, itaque natus repellat animi
-            exercitationem enim. Voluptatem, harum?
-          </p>
-          <button type="button" class="btn btn-outline-success">
-            <a href="" target="_blank">Leia Mais</a>
-        </button>
-        </div>
-      </div> <!-- fecha segundo card -->
+    <div class="box-wrap">
+      <div class="box">
+      <img src="assets/Accountant-pana.png" width="200" height="200">
+        <h4>O que é DAS MEI e como pagar?</h4>
+       <p>Saiba como emitir e pagar sua <b>DAS MEI</b>.</p>
+       <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-primary" id="box" href="https://blog.meifacil.com/obrigacoes-do-mei/como-emitir-das-mei/" target="_blank">Leia Mais</a>
+       </div><!--fecha botao-->
+      </div> <!--fecha card 1-->
 
-      <!--abre ADSs-->
-      <div class="w3-third w3-container">
-        <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-        <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        <div class="par">
+          <img src="assets/Crochet-amico.png" width="200" height="200">
+          <h4>Como precificar um produto:</h4>
+          <p>Confira dicas de como calcular o preço do seu produto ou serviço e entender quanto seus <b>clientes</b> estão dispostos a pagar.</p>
+         <div class="d-flex justify-content-center">
+          <a class="btn btn-sm btn-outline-primary" id="par" href="https://blog.meifacil.com/financas/como-precificar-um-produto-ou-servico/" target="_blank">Leia Mais</a>
+         </div><!--fecha botao-->
+        </div> <!--fecha card 2-->
+
+        <div class="box">
+          <img src="assets/Credit card-cuate.png" width="200" height="200">
+          <h4>Dicas para escolher sua Máquina de cartão</h4>
+          <p>A escolha errada da máquina pode trazer mais prejuízos e dores de cabeça do que facilidades.
+            Veja o que você deve saber antes de escolher sua <b>máquina de cartão</b>!</p>
+         <div class="d-flex justify-content-center">
+          <a class="btn btn-sm btn-outline-primary" id="box" href="https://blog.meifacil.com/financas/maquina-de-cartao-o-que-considerar/" target="_blank">Leia Mais</a>
+         </div><!--fecha botao-->
+        </div> <!--fecha card 3-->
+
+        <div class="par">
+          <img src="assets/Design Process-cuate.png" width="200" height="200">
+          <h4>Como começar um negócio MEI?</h4>
+          <p>Confira ideias para iniciar um negócio empreendedor e <b>complemente sua renda</b>!</p>
+         <div class="d-flex justify-content-center">
+           <a class="btn btn-sm btn-outline-primary" id="par" href="https://blog.meifacil.com/empreendedorismo/como-comecar-um-negocio-mei/" target="_blank">Leia Mais</a>
+          </div><!--fecha botao-->
+            </div><!--fecha card 4-->
+
+  </div><!--fecha box-wrap-->
+
+<!--fim da primeira fileira -->
+
+
+<!-- inicia segunda fileira -->
+
+<div class="box-wrap">
+
+  <div class="par">
+    <img src="assets/Questions-amico.png" width="200" height="200">
+    <h4>Quanto custa abrir um CNPJ?</h4>
+    <p>Saiba <b>quanto custa</b> abrir um MEI e como <b>regularizar o seu negócio</b>!</p>
+   <div class="d-flex justify-content-center">
+    <a class="btn btn-sm btn-outline-primary" id="par" href="https://twitter.com/granapretaofc/status/1360008145893011462" target="_blank">Leia Mais</a>
+   </div><!--fecha botao-->
+  </div> <!--fecha card 6-->
+
+
+  <div class="box">
+  <img src="assets/Video tutorial-amico.png" width="200" height="200">
+  <h4>Tudo sobre o MEI</h4>
+  <p>Uma playlist com as principais <b>dúvidas sobre o MEI</b>.</p>
+   <div class="d-flex justify-content-center">
+    <a class="btn btn-sm btn-outline-primary" id="box" href="https://www.youtube.com/playlist?list=PLDlxlCF-E-Dcnt53OPB8BvcGQiw_XCI-A" target="_blank">Veja Mais</a>
+   </div><!--fecha botao-->
+  </div> <!--fecha card 5-->
+
+
+  <div class="par">
+    <img src="assets/Exams-rafiki.png" width="200" height="200">
+    <h4>Posso ser MEI e ter carteira assinada?</h4>
+    <p>Entenda as <b>diferenças entre MEI e CLT</b> e se há alguma restrição ou não.</p>
+   <div class="d-flex justify-content-center">
+     <a class="btn btn-sm btn-outline-primary" id="par" href="https://twitter.com/centralnath/status/1417577982114340870" target="_blank">Leia Mais</a>
+    </div><!--fecha botao-->
+      </div><!--fecha card 8-->
+
+
+    <div class="box">
+      <img src="assets/Investing-rafiki.png" width="200" height="200">
+      <h4>Controle Financeiro MEI: Mantenha seu Negócio Saudável</h4>
+      <p>Controle de vez as finanças da sua empresa baixando a <b>planilha de controle financeiro MEI</b>.</p>
+     <div class="d-flex justify-content-center">
+      <a class="btn btn-sm btn-outline-primary" id="box" href="https://blog.meifacil.com/sou-microempreendedor-individual/planilha-de-controle-financeiro-mei/" target="_blank">Leia Mais</a>
+     </div><!--fecha botao-->
+    </div> <!--fecha card 7-->
+
+</div><!--fecha box-wrap-->
+<!--fim segunda fileira -->
+
+
+  <!-- inicia terceira fileira -->
+
+  <div class="box-wrap">
+    <div class="box">
+      <img src="assets/Travelers-pana.png" width="200" height="200">
+      <h4>MEI para estrangeiros</h4>
+      <p>Saiba como regularizar seu negócio, mesmo sendo <b>estrangeiro</b>.</p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-primary" id="box"
+          href="https://www.sebrae.com.br/sites/PortalSebrae/ufs/ap/artigos/mei-estrangeiro-voce-tambem-pode-ser-um,c42c3358be5ec410VgnVCM1000003b74010aRCRD"
+          target="_blank">Leia Mais</a>
       </div>
-      
-      <!--fecha ADSs-->
+      <!--fecha botao-->
+    </div>
+    <!--fecha card 9 -->
 
-    </div><!--fecha card deck-->
-  </div><!--fecha container -->
-</div><!--fecha row-->
+    <div class="par">
+      <img src="assets/benefits.png" width="200" height="200">
+      <h4>Benefícios MEI</h4>
+      <p>Saiba quais são os <b>benefícios de ser um MEI</b>.</p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-primary" id="par" href="https://www.youtube.com/watch?v=MGesVjR5SCk"
+          target="_blank">Veja Mais</a>
+      </div>
+      <!--fecha botao-->
+    </div>
+    <!--fecha card 10-->
 
-<!-- fecha Cards 1-->
+    <div class="box">
+      <img src="assets/Problem solving-pana.png" width="200" height="200">
+      <h4>Tudo sobre o MEI</h4>
+      <p>Um <b>artigo</b> com respostas para as principais <b>dúvidas sobre o MEI</b>.</p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-primary" id="box"
+          href="https://www.sebrae.com.br/sites/PortalSebrae/artigos/tudo-o-que-voce-precisa-saber-sobre-o-mei,caa7d72060589710VgnVCM100000d701210aRCRD" target="_blank">Leia Mais</a>
+      </div>
+      <!--fecha botao-->
+    </div>
+    <!--fecha card 11-->
 
+    <div class="par">
+      <img src="assets/Podcast audience-bro.png" width="200" height="200">
+      <h4>Como ser um MEI?</h4>
+      <p>Saiba como tornar-se um MEI.</p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-primary" id="par"
+          href="https://open.spotify.com/episode/0etuKwCGW2EQsV4T5EMbMP?si=LqWewQqdQjWtHogbNtpFGA&dl_branch=1&nd=1" target="_blank">Ouça no <br>Spotify</a>
+      </div>
+      <!--fecha botao-->
+    </div>
+    <!--fecha card 12-->
 
-<!--inicia cards 2 -->
+  </div>
 
-<div class="row mt-5 d-flex justify-content-center">
-    <div class="container">
-      <div class="card-deck">
-        <div class="card">
-            <img class="card-img-top" src="assets/Work time-bro.png">
-            <div class="card-body"><h5>Tutoriais</h5>
-              <p class="card-text"> 
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestiae soluta consequuntur rem perferendis
-                perspiciatis explicabo numquam maiores asperiores, fugiat atque nihil, itaque natus repellat animi
-                exercitationem enim. Voluptatem, harum?
-              </p>
-              <button type="button" class="btn btn-outline-success">
-                <a href="" target="_blank">Leia Mais</a>
-            </button>
-            </div>
-          </div> <!-- fecha terceiro card -->
-    
-          <div class="card">
-            <img class="card-img-top" src="assets/Ice cream seller-amico.png">
-            <div class="card-body"><h5>Vídeos</h5>
-              <p class="card-text"> 
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestiae soluta consequuntur rem perferendis
-                perspiciatis explicabo numquam maiores asperiores, fugiat atque nihil, itaque natus repellat animi
-                exercitationem enim. Voluptatem, harum?
-              </p>
-              <button type="button" class="btn btn-outline-success">
-                <a href="" target="_blank">Assista Mais</a>
-            </button>
-            </div>
-          </div> <!-- fecha quarto card -->
-    
-          <!--abre ADSs-->
-    
-          <div class="w3-third w3-container">
-            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-          </div>
 <app-rodape></app-rodape>

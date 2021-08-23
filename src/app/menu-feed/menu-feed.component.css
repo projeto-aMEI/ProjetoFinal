@@ -1,5 +1,5 @@
 .bg-purple {
-    background-color: #532C7A;
+    background-color: #280370;
 }
 
 ul li a,
@@ -23,8 +23,8 @@ ul li a:before {
   height: 3px;
   bottom: 0;
   left: 0;
-  color: #E09E27;
-  background-color: #E09E27;
+  color: #ff992e;
+  background-color: #ff992e;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -33,7 +33,7 @@ ul li a:before {
 }
 
 ul li a:hover:before {
-  color: #E09E27;
+  color: #ff992e;
   text-decoration: underline;
   transition: 0.5s;
   visibility: visible;
@@ -42,7 +42,7 @@ ul li a:hover:before {
 }
 
 ul li a:hover {
-  color: #E09E27;
+  color: #ff992e;
 }
 
 .btn-exit {
@@ -192,4 +192,19 @@ a.text-muted:focus {
 
 .bg-cz {
   background-color:#eee;
+}
+
+.input-search {
+  background-color:#280370;
+  color:#fff;
+  outline: none;
+  border:2px solid #fff
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.input-search::placeholder{
+  color:#fff;
 }
